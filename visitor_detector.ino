@@ -28,11 +28,9 @@ void loop() {
       init_counter = ON;
   } else {
     if (!(calc_counter)) {
-      Serial.print("perhitungan akhhir");
       average_signal = total_signal / TRY;
       calc_counter = ON;
     }
-    Serial.print(average_signal);
     initiate(TRIGGER);
     container = pulseIn(ECHO, HIGH);
     if (container < average_signal - TOLERANCE) {
