@@ -3,7 +3,7 @@
 #define TRY 5
 #define ON 1
 #define ALARM 7
-#define TOLERANCE 24 //obtain the value with try and error approach
+#define TOLERANCE 50 //obtain the value with try and error approach
 
 int i = 0;
 int init_counter = 0;
@@ -33,6 +33,7 @@ void loop() {
     }
     initiate(TRIGGER);
     container = pulseIn(ECHO, HIGH);
+    Serial.println(container * 0.01657); //get a cm (sudah di kalibrasi !!!)
     if (container < average_signal - TOLERANCE) {
       alarm(ALARM);
       delay(500); //remember to delay, to give a chance for ultrasonic wave
