@@ -33,7 +33,7 @@ void loop() {
     }
     initiate(TRIGGER);
     container = pulseIn(ECHO, HIGH);
-    Serial.println(container * 0.01657); //get a cm (sudah di kalibrasi !!!)
+    Serial.println(container * 0.01657); //get a cm (sudah di kalibrasi !)
     if (container < average_signal - TOLERANCE) {
       alarm(ALARM);
       delay(500); //remember to delay, to give a chance for ultrasonic wave
